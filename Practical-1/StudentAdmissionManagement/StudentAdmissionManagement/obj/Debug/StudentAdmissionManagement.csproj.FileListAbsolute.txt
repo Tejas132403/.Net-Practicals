@@ -1,0 +1,7 @@
+D:\.NET\lab practicals\StudentAdmissionManagement\StudentAdmissionManagement\bin\Debug\StudentAdmissionManagement.exe.config
+D:\.NET\lab practicals\StudentAdmissionManagement\StudentAdmissionManagement\bin\Debug\StudentAdmissionManagement.exe
+D:\.NET\lab practicals\StudentAdmissionManagement\StudentAdmissionManagement\bin\Debug\StudentAdmissionManagement.pdb
+D:\.NET\lab practicals\StudentAdmissionManagement\StudentAdmissionManagement\obj\Debug\StudentAdmissionManagement.csproj.AssemblyReference.cache
+D:\.NET\lab practicals\StudentAdmissionManagement\StudentAdmissionManagement\obj\Debug\StudentAdmissionManagement.csproj.CoreCompileInputs.cache
+D:\.NET\lab practicals\StudentAdmissionManagement\StudentAdmissionManagement\obj\Debug\StudentAdmissionManagement.exe
+D:\.NET\lab practicals\StudentAdmissionManagement\StudentAdmissionManagement\obj\Debug\StudentAdmissionManagement.pdb
