@@ -1,0 +1,7 @@
+D:\.NET\lab practicals\ExpenseTrackingModule\ExpenseTrackingModule\bin\Debug\ExpenseTrackingModule.exe.config
+D:\.NET\lab practicals\ExpenseTrackingModule\ExpenseTrackingModule\bin\Debug\ExpenseTrackingModule.exe
+D:\.NET\lab practicals\ExpenseTrackingModule\ExpenseTrackingModule\bin\Debug\ExpenseTrackingModule.pdb
+D:\.NET\lab practicals\ExpenseTrackingModule\ExpenseTrackingModule\obj\Debug\ExpenseTrackingModule.csproj.AssemblyReference.cache
+D:\.NET\lab practicals\ExpenseTrackingModule\ExpenseTrackingModule\obj\Debug\ExpenseTrackingModule.csproj.CoreCompileInputs.cache
+D:\.NET\lab practicals\ExpenseTrackingModule\ExpenseTrackingModule\obj\Debug\ExpenseTrackingModule.exe
+D:\.NET\lab practicals\ExpenseTrackingModule\ExpenseTrackingModule\obj\Debug\ExpenseTrackingModule.pdb
