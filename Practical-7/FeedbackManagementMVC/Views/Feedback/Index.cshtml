@@ -1,0 +1,77 @@
+﻿@model FeedbackManagementMVC.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback";
+}
+
+<h2>Feedback Management</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Name)
+        <br />
+
+        @Html.TextBoxFor(m => m.Name,
+            new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Email)
+        <br />
+
+        @Html.TextBoxFor(m => m.Email,
+            new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Rating)
+        <br />
+
+        @Html.DropDownListFor(
+            m => m.Rating,
+            new SelectList(new[]
+            {
+                "Excellent",
+                "Good",
+                "Average",
+                "Poor"
+            }),
+            "Select Rating",
+            new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(m => m.Rating)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Comments)
+        <br />
+
+        @Html.TextAreaFor(m => m.Comments,
+            new
+            {
+                rows = 5,
+                cols = 40
+            })
+
+        @Html.ValidationMessageFor(m => m.Comments)
+    </div>
+
+    <br />
+
+    @Html.ValidationSummary(true)
+
+    <input type="submit"
+           value="Submit Feedback"
+           class="btn btn-primary" />
+}

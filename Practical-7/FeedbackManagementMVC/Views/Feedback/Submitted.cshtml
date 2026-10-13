@@ -1,0 +1,38 @@
+﻿@model FeedbackManagementMVC.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback Submitted";
+}
+
+<h2>Feedback Submitted Successfully!</h2>
+
+<hr />
+
+<h3>Feedback Details</h3>
+
+<p>
+    <strong>Name:</strong>
+    @Model.Name
+</p>
+
+<p>
+    <strong>Email:</strong>
+    @Model.Email
+</p>
+
+<p>
+    <strong>Rating:</strong>
+    @Model.Rating
+</p>
+
+<p>
+    <strong>Comments:</strong>
+    @Model.Comments
+</p>
+
+<br />
+
+@Html.ActionLink(
+    "Submit Another Feedback",
+    "Index",
+    "Feedback")
