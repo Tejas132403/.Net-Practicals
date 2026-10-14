@@ -1,0 +1,57 @@
+@model IEnumerable<InventoryManagementMVC.Models.Product>
+
+@{
+    ViewBag.Title = "Inventory";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Inventory Management</h2>
+        @Html.ActionLink("Add New Product", "Create", null, new { @class = "btn btn-primary" })
+    </div>
+
+    <table class="table table-bordered table-striped table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th style="width: 180px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var p in Model)
+                {
+                    <tr>
+                        <td>@p.Id</td>
+                        <td>@p.Name</td>
+                        <td>@p.Quantity</td>
+                        <td>@string.Format("{0:C}", p.Price)</td>
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                @Html.ActionLink("Edit", "Edit", new { id = p.Id }, new { @class = "btn btn-sm btn-outline-primary" })
+
+                                @using (Html.BeginForm("Delete", "Inventory", new { id = p.Id }, FormMethod.Post, new { @class = "d-inline m-0" }))
+                                {
+                                    <input type="submit"
+                                           value="Delete"
+                                           class="btn btn-sm btn-outline-danger"
+                                           onclick="return confirm('Delete this product?');" />
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted">No products found. Click "Add New Product" to create one.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
