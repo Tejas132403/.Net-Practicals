@@ -11,4 +11,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
   </ItemGroup>
 
+  <Target Name="RemoveStaticWebAssetsRuntimeJson" AfterTargets="Build">
+    <Delete Files="$(TargetDir)$(TargetName).staticwebassets.runtime.json" Condition="Exists('$(TargetDir)$(TargetName).staticwebassets.runtime.json')" />
+  </Target>
+
 </Project>

@@ -1,10 +1,11 @@
-// Ensure temporary obj asset directories exist to prevent DirectoryNotFoundException in preview SDKs
+// Remove any stale staticwebassets manifest generated with old paths before CreateBuilder reads it
 try
 {
-    var jsModulesPath = Path.Combine(Directory.GetCurrentDirectory(), "obj", "Debug", "net10.0", "jsmodules");
-    if (!Directory.Exists(jsModulesPath))
+    var assemblyName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name ?? "StudentManagementAPI";
+    var staleManifest = Path.Combine(AppContext.BaseDirectory, $"{assemblyName}.staticwebassets.runtime.json");
+    if (File.Exists(staleManifest))
     {
-        Directory.CreateDirectory(jsModulesPath);
+        File.Delete(staleManifest);
     }
 }
 catch { }
