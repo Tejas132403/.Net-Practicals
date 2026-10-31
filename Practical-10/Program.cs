@@ -20,14 +20,16 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Middleware configuration
-if (app.Environment.IsDevelopment())
+// Enable Swagger and Swagger UI
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Student Management API v1");
+    c.RoutePrefix = "swagger";
+});
 
-app.UseHttpsRedirection();
+// Redirect root "/" to "/swagger" so opening the application immediately displays the Swagger API UI
+app.MapGet("/", () => Results.Redirect("/swagger"));
 
 app.UseAuthorization();
 
