@@ -1,0 +1,5 @@
+// Crystal Reports Report File: PlacementReport.rpt
+// In Visual Studio with SAP Crystal Reports installed, this file is created using:
+// Add -> New Item -> Crystal Report -> PlacementReport.rpt
+// Data Source: Placements table in PlacementDB
+// Fields: Id, StudentName, CompanyName, JobRole, Package

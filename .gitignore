@@ -1,0 +1,23 @@
+# Windows thumbnail cache and desktop.ini
+desktop.ini
+[Dd]esktop.ini
+Thumbs.db
+ehthumbs.db
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# NuGet Packages
+*.nupkg
+packages/

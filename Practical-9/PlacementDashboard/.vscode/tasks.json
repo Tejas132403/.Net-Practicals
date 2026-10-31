@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build PlacementDashboard",
+      "type": "shell",
+      "command": "& 'C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\MSBuild.exe' '${workspaceFolder}\\PlacementDashboard.csproj' /t:Build /p:Configuration=Debug /verbosity:minimal",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Run PlacementDashboard (IIS Express)",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File '${workspaceFolder}\\run.ps1'",
+      "problemMatcher": []
+    }
+  ]
+}
