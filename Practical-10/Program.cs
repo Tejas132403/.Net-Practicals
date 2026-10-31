@@ -1,3 +1,14 @@
+// Ensure temporary obj asset directories exist to prevent DirectoryNotFoundException in preview SDKs
+try
+{
+    var jsModulesPath = Path.Combine(Directory.GetCurrentDirectory(), "obj", "Debug", "net10.0", "jsmodules");
+    if (!Directory.Exists(jsModulesPath))
+    {
+        Directory.CreateDirectory(jsModulesPath);
+    }
+}
+catch { }
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Register controller services
