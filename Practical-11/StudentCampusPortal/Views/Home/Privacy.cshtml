@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Practical 11 Information";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-4">
+                <h2 class="fw-bold text-primary mb-3">Practical 11: Smart Campus Service Portal</h2>
+                <p class="lead text-muted">Full-stack Web Application integrating ASP.NET MVC, ADO.NET / SQL Server, and REST API.</p>
+
+                <hr />
+
+                <h4 class="fw-bold mt-4">Module Architecture</h4>
+                <div class="row g-3 my-2">
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-light">
+                            <h5 class="fw-bold text-primary">1. MVC Frontend</h5>
+                            <p class="small text-muted mb-0">Bootstrap-styled responsive views with strongly-typed Razor models, validation messages, and anti-forgery protection.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-light">
+                            <h5 class="fw-bold text-primary">2. ADO.NET Data Access</h5>
+                            <p class="small text-muted mb-0"><code>ServiceRequestDAL</code> communicating directly with <code>SmartCampusDB</code> on SQL Server LocalDB via <code>Microsoft.Data.SqlClient</code>.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-light">
+                            <h5 class="fw-bold text-primary">3. RESTful Web API</h5>
+                            <p class="small text-muted mb-0"><code>ServiceApiController</code> exposing JSON endpoints for GET, POST, and PUT actions for mobile or client apps.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="fw-bold mt-4">Database Connection</h4>
+                <p>The application connects to <strong>SQL Server LocalDB</strong> using the following connection string:</p>
+                <pre class="bg-light p-3 rounded border"><code>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SmartCampusDB;Integrated Security=True;TrustServerCertificate=True</code></pre>
+
+                <h4 class="fw-bold mt-4">Available Endpoints</h4>
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Route</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/</code> or <code>/Home/Index</code></td>
+                            <td><span class="badge bg-secondary">MVC View</span></td>
+                            <td>Interactive Dashboard with live counters and recent requests</td>
+                        </tr>
+                        <tr>
+                            <td><code>/ServiceRequest</code></td>
+                            <td><span class="badge bg-secondary">MVC View</span></td>
+                            <td>All service requests table with action links</td>
+                        </tr>
+                        <tr>
+                            <td><code>/ServiceRequest/Create</code></td>
+                            <td><span class="badge bg-secondary">MVC View</span></td>
+                            <td>Service request submission form with validation</td>
+                        </tr>
+                        <tr>
+                            <td><code>/ServiceRequest/UpdateStatus/{id}</code></td>
+                            <td><span class="badge bg-secondary">MVC View</span></td>
+                            <td>Status update form (Pending, In Progress, Completed)</td>
+                        </tr>
+                        <tr>
+                            <td><code>/api/ServiceApi</code></td>
+                            <td><span class="badge bg-success">REST GET</span></td>
+                            <td>JSON payload containing all requests</td>
+                        </tr>
+                        <tr>
+                            <td><code>/api/ServiceApi</code></td>
+                            <td><span class="badge bg-primary">REST POST</span></td>
+                            <td>Submit new request in JSON format</td>
+                        </tr>
+                        <tr>
+                            <td><code>/api/ServiceApi/UpdateStatus/{id}</code></td>
+                            <td><span class="badge bg-warning text-dark">REST PUT</span></td>
+                            <td>Update status via JSON body <code>{"status": "Completed"}</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

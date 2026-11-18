@@ -1,0 +1,84 @@
+@model StudentCampusPortal.Models.ServiceRequest
+
+@{
+    ViewData["Title"] = "Request Details";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+                <h4 class="mb-0 fw-bold text-primary">Service Request #@Model.RequestId</h4>
+                <div>
+                    @if (Model.Status == "Completed")
+                    {
+                        <span class="badge bg-success fs-6">Completed</span>
+                    }
+                    else if (Model.Status == "In Progress")
+                    {
+                        <span class="badge bg-info text-dark fs-6">In Progress</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark fs-6">Pending</span>
+                    }
+                </div>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label class="text-muted small text-uppercase fw-semibold">Student Name</label>
+                        <div class="fs-5 fw-bold">@Model.StudentName</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small text-uppercase fw-semibold">Department</label>
+                        <div class="fs-5">@Model.Department</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small text-uppercase fw-semibold">Service Type</label>
+                        <div><span class="badge bg-light text-dark border fs-6">@Model.ServiceType</span></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small text-uppercase fw-semibold">Priority</label>
+                        <div>
+                            @if (Model.Priority == "High")
+                            {
+                                <span class="badge bg-danger">High Priority</span>
+                            }
+                            else if (Model.Priority == "Medium")
+                            {
+                                <span class="badge bg-warning text-dark">Medium Priority</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Low Priority</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small text-uppercase fw-semibold">Date Submitted</label>
+                        <div class="text-muted">@Model.RequestDate.ToString("F")</div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="text-muted small text-uppercase fw-semibold">Problem Description</label>
+                    <div class="p-3 bg-light rounded border">
+                        @Model.Description
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        &larr; Back to Requests
+                    </a>
+                    <div>
+                        <a asp-action="UpdateStatus" asp-route-id="@Model.RequestId" class="btn btn-primary">
+                            Update Status
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

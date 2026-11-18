@@ -1,0 +1,51 @@
+﻿
+@model SmartCampusPortal.Models.ServiceRequest
+
+<h2>Create Campus Service Request</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <p>Student Name</p>
+    @Html.TextBoxFor(m => m.StudentName)
+    @Html.ValidationMessageFor(m => m.StudentName)
+
+    <p>Department</p>
+    @Html.TextBoxFor(m => m.Department)
+    @Html.ValidationMessageFor(m => m.Department)
+
+    <p>Service Type</p>
+    @Html.DropDownListFor(m => m.ServiceType,
+        new SelectList(new[]
+        {
+            "IT Support",
+            "Library",
+            "Maintenance",
+            "Transport"
+        }))
+
+    @Html.ValidationMessageFor(m => m.ServiceType)
+
+    <p>Description</p>
+    @Html.TextAreaFor(m => m.Description)
+    @Html.ValidationMessageFor(m => m.Description)
+
+    <p>Priority</p>
+    @Html.DropDownListFor(m => m.Priority,
+        new SelectList(new[]
+        {
+            "Low",
+            "Medium",
+            "High"
+        }))
+
+    <br />
+    <br />
+
+    <input type="submit" value="Submit Request" />
+}
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,26 @@
+﻿
+<h2>Update Request Status</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <input type="hidden"
+           name="id"
+           value="@ViewBag.RequestId" />
+
+    <p>Status</p>
+
+    @Html.DropDownList("status",
+        new SelectList(new[]
+        {
+            "Pending",
+            "In Progress",
+            "Completed"
+        }))
+
+    <br />
+    <br />
+
+    <input type="submit" value="Update Status" />
+}

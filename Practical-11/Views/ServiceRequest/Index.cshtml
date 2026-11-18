@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SmartCampusPortal.Models.ServiceRequest>
+
+<h2>Smart Campus Service Requests</h2>
+
+<p>
+    @Html.ActionLink("Create New Request", "Create")
+</p>
+
+<table border="1">
+    <tr>
+        <th>Request ID</th>
+        <th>Student Name</th>
+        <th>Department</th>
+        <th>Service Type</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RequestId</td>
+            <td>@item.StudentName</td>
+            <td>@item.Department</td>
+            <td>@item.ServiceType</td>
+            <td>@item.Description</td>
+            <td>@item.Priority</td>
+            <td>@item.Status</td>
+            <td>@item.RequestDate</td>
+
+            <td>
+                @Html.ActionLink(
+                    "Update Status",
+                    "UpdateStatus",
+                    new { id = item.RequestId })
+            </td>
+        </tr>
+    }
+</table>
